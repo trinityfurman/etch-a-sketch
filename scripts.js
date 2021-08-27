@@ -20,8 +20,14 @@ for (let i = 0; i < 16; i++) {
         // Set divs to proper width and height with template literal
         div.style.width = `${width}px`;
         div.style.height = `${width}px`;
+
+        // Change background color of div when moused over
+        div.addEventListener("mouseenter", () => {
+            div.style.backgroundColor = "black";
+        });
         // Add new div to the container
         container.appendChild(div);
+
     }
 }
 
