@@ -26,7 +26,7 @@ function createGrid(numberOfBoxes) {
         div.classList.add('grid');
 
         // Calculate size based on number of columns and size of margin
-        let width = (960 - (2 * numberOfBoxes))/ numberOfBoxes;
+        let width = (800 - (2 * numberOfBoxes))/ numberOfBoxes;
         
         // For the first div of each row, clear to the next line
         if (i > 0 && j == 0) {
@@ -53,7 +53,7 @@ function createGrid(numberOfBoxes) {
 const container = document.querySelector('#container');
 
 // Initialize number of boxes to 16
-let boxes = 16;
+let boxes = 20;
 
 // Create initial grid on page
 createGrid(boxes);
@@ -125,6 +125,28 @@ rainbow.addEventListener('click', () => {
                 div.style.backgroundColor = `hsl(0, 0%, ${lightness}%`;
             }
          });
+     });
+ });
+
+ // Change each div to body background color when clicked
+ const eraser = document.querySelector('#eraser');
+ eraser.addEventListener('click', () => {
+    const divList = document.querySelectorAll('.grid');
+    divList.forEach((div) => {
+        div.addEventListener("mouseenter", () => {
+            div.style.backgroundColor = '#C3D1C4';
+        });
+    });
+ });
+
+ // Change each div to black when clicked
+ const black = document.querySelector('#black');
+ black.addEventListener('click', () => {
+     const divList = document.querySelectorAll('.grid');
+     divList.forEach((div) => {
+        div.addEventListener('mouseenter', () => {
+            div.style.backgroundColor = "black";
+        });
      });
  });
 

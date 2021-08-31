@@ -1,12 +1,52 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">  
         <style>  
+
+            body {
+                background-color: #C3D1C4;
+                font-family: 'Amatic SC', cursive;
+                font-size: x-large;
+            }
+
+            button {
+                background-color: #659095;
+                font-family: 'Amatic SC', cursive;
+                padding: 10px;
+                font-size: 20px;
+                border-radius: 6px;
+                border: none;
+                margin-top: 1px;
+                margin: 15px;
+            }
+
+            button:hover {
+                background-color: #98BCB9;
+                box-shadow: 0 5px 15px #98BCB9;
+            }
+
+            #heading {
+                padding: 2px;
+                margin: 0px;
+                height: 100px;
+            }
+
             #container {
                 display: block;
                 margin-left: auto;
                 margin-right: auto;
-                width: 960px;
+                width: 800px;
+                height: 800px;
+                border:#626B85;
+                border-width: 5px;
+                border-style: solid;
+            }
+
+            #btn {
+                background-color: #A49CBB;
             }
             
             .float {
@@ -22,16 +62,21 @@
             .center {
                 display: flex;
                 justify-content: center;
-                padding: 10px;
+                
             }
         </style>
     </head>
     <body>
         <div>
+            <div id='heading' class='center'>
+                <h1>Etch-a-sketch</h1>
+            </div>
             <div class='center'>
-            <button id="btn">Create new grid!</button>
-            <button id="rainbow">Rainbow</button>
-            <button id="grayscale">Grayscale</button>
+                <button id="btn">Create new grid!</button>
+                <button id="black">Black</button>
+                <button id="rainbow">Rainbow</button>
+                <button id="grayscale">Grayscale</button>
+                <button id="eraser">Eraser</button>
             </div>
             <div id="container"></div>
         </div>
