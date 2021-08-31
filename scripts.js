@@ -17,7 +17,6 @@ function getRandomColor() {
     return newColor;
  }
 
-
 // Create grid of set size
 function createGrid(numberOfBoxes) {
  for (let i = 0; i < numberOfBoxes; i++) {
@@ -98,6 +97,34 @@ rainbow.addEventListener('click', () => {
         div.addEventListener("mouseenter", () => {
             div.style.backgroundColor = getRandomColor();
         });
+     });
+ });
+
+ // Create constant for grayscale button
+ const grayscale = document.querySelector("#grayscale");
+ // Change divs to grayscale when button is clicked
+ grayscale.addEventListener('click', () => {
+     const divList = document.querySelectorAll('.grid');
+     divList.forEach((div) => {
+         div.addEventListener("mouseenter", () => {
+
+            // Check classes of each div
+            let classes = div.classList;
+            // If div has gray class, decrease lightness by 10%
+            if (classes.contains('gray')) {
+                let lightness = classes[3];
+                div.classList.remove(`${lightness}`);
+                lightness -= 10;
+                div.classList.add(`${lightness}`);
+                div.style.backgroundColor = `hsl(0, 0%, ${lightness}%`;
+            } else {
+                // Else, add gray class to div and initialize lightness at 100%
+                div.classList.add('gray');
+                let lightness = 100;
+                div.classList.add('100');
+                div.style.backgroundColor = `hsl(0, 0%, ${lightness}%`;
+            }
+         });
      });
  });
 
