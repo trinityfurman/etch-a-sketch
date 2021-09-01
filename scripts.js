@@ -113,6 +113,9 @@ rainbow.addEventListener('click', () => {
             // If div has gray class, decrease lightness by 10%
             if (classes.contains('gray')) {
                 let lightness = classes[3];
+                if (classes.contains('clear')) {
+                    lightness = classes[4];
+                }
                 div.classList.remove(`${lightness}`);
                 lightness -= 10;
                 div.classList.add(`${lightness}`);
